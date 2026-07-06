@@ -1,0 +1,118 @@
+#!/bin/bash
+#!/bin/bash
+
+# ============================================================
+# new_cpp_project
+#
+# Author : Miguel Andrés Perdomo Gutiérrez
+#
+# Creates a Modern C++ project using CMake.
+#
+# Automatically generates:
+#   - README.md
+#   - CMakeLists.txt
+#   - .gitignore
+#   - src/main.cpp
+#   - build/
+#   - include/
+#   - docs/
+#   - tests/
+#
+# Usage:
+#
+#     new_cpp_project
+#
+# ============================================================
+
+echo "======================================"
+echo "   Modern C++ Project Generator"
+echo "======================================"
+echo
+
+read -p "Project name: " project_name
+
+if [ -z "$project_name" ]; then
+    echo
+    echo "Error: project name cannot be empty."
+    exit 1
+fi
+
+if [ -d "$project_name" ]; then
+    echo
+    echo "Error: directory '$project_name' already exists."
+    exit 1
+fi
+
+mkdir -p "$project_name"/{src,include,build,docs,tests}
+
+cat > "$project_name/README.md" << EOF
+# $project_name
+
+## Description
+
+Learning Modern C++.
+
+## Build
+
+\`\`\`bash
+cmake -S . -B build
+cmake --build build
+\`\`\`
+
+## Run
+
+\`\`\`bash
+./build/$project_name
+\`\`\`
+EOF
+
+cat > "$project_name/.gitignore" << EOF
+# Build directory
+build/
+
+# VS Code
+.vscode/
+
+# Executables
+*.exe
+*.out
+
+# macOS
+.DS_Store
+EOF
+
+cat > "$project_name/CMakeLists.txt" << EOF
+cmake_minimum_required(VERSION 3.20)
+
+project($project_name)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+add_executable($project_name
+    src/main.cpp
+)
+EOF
+
+
+cat > "$project_name/src/main.cpp" << EOF
+#include <iostream>
+
+int main()
+{
+    std::cout << "Hello, World!\n";
+
+    return 0;
+}
+EOF
+
+
+echo
+echo "Project created successfully!"
+echo
+echo "nexts steps: "
+echo "cd $project_name "
+echo "cmake -S . -B build"
+echo "cmake --build build"
+echo ".build/$project_name"
+echo "LUCKYYY"

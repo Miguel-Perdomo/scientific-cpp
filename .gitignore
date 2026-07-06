@@ -1,0 +1,15 @@
+# Linux
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Python
+__pycache__/
+
+# Compiled binaries
+*.out
+*.exe
+
+# Temporary files
+*.tmp
