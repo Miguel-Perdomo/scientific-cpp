@@ -1,0 +1,65 @@
+Vamos primero a entender qué estamos haciendo en el codigo de hello world (ejercicio1.cpp),
+
+/*
+    esto es un comentario multilinea
+*/
+
+#include <iostream> // incluyame todo lo que tenga iostream, libreria estandar o directiva del procesador
+
+std::cout << // esto está metido en iostream
+
+la funcion main que en ese caso retorna un entero y ademas, es la unica funcion que genera un ejecutable.
+
+los encabezados de lenguaje .h son una mala practica de programacion, trae problemas luego.
+
+por ejemplo, una funcion basica que me sume dos numeros, luego usarla en el main: 
+
+###########################################################################################
+
+#include<iostream>
+
+int suma(int a, int b); siempre declaras arriba, luego abajo lo haces
+
+int main(void){
+
+    std::cout << suma(1, 2) << "\n";
+    std::cout << suma(1, -1) << "\n";
+
+    return 0;
+}
+
+int suma(int a, int b){
+
+    int c = a + b;
+    return c;
+}
+
+#############################################################################################
+
+ejercicio: hacer un programa que lea su nombre desde la linea de comandos, imprima Hello, $nombre que leyó, para eso, usar una nueva funcion llamada
+
+std::cin or std::getline, buscando la informacion de esas dos y que no uses gpt.
+
+esto estara en ejercicio2.cpp, lo primero que me doy cuenta como intuia es que es de la libreria estandar de c++
+
+vale, pero al intentar imprimir "Miguel Perdomo" lo que pasa es que cin con su operador >> termina cuando detecta un " ", por lo que solo imprime "Miguel", solución: std:getline
+
+std::getline no esta en la libreria estandar, esta en #include<string>, al buscar info sobre getline, me salen templates, soon sintaxis de plantillas.
+
+¿qué significa ChatT, Traits y Allocator?
+
+En c++ std::string no es un tipo unico y cerrado, en realidad es una plantilla o molde que se adapta a diferentes tipos de letras.
+
+ChatT(character type): representa el tipo de caracter a usar.
+    hay un caracter que se llama char, es el mas comun.
+    ChatT es simplemente un marcador posicional que te dice "aqui va el tipo de letra que elijas"
+
+Traits y Allocator: Son configuraciones avanzdas que le dicen al programa como comparar esas letras(Traits) y cómo manejar la memoria de la computadora (Allocator). Casi nunca tendras que tocarlos ni escribir nada para ellos, c++ los llena con valores por defecto de forma automatica
+
+vamos a aclarar, getline es una funcion global de la libreria <string>, getline(de donde saco los datos, donde los guardo, como me detengo),
+
+En la primera ranura de std::getline (el "¿de dónde saco los datos?"), C++ espera recibir lo que llamamos un flujo de entrada (en inglés, un input stream).
+
+La clase base para estos flujos se llama std::istream. Cualquier objeto que "herede" o sea un flujo de entrada puede ponerse en ese primer parámetro.
+
+o sea, tambien puedo leer un archivo con ifstream.
