@@ -63,3 +63,45 @@ En la primera ranura de std::getline (el "¿de dónde saco los datos?"), C++ esp
 La clase base para estos flujos se llama std::istream. Cualquier objeto que "herede" o sea un flujo de entrada puede ponerse en ese primer parámetro.
 
 o sea, tambien puedo leer un archivo con ifstream.
+
+qué pasa si no pongo return 0; ? funciona.
+
+# Variables y tipos: 
+
+string, float, double, int, bool.
+
+variable: 
+tipo de dato (tamaño), 
+nombre, 
+dirección de memoria, 
+alcance o visibilidad{}: 
+
+int main(void){
+    int a;
+}
+
+void algo(int m){
+    int a;
+}
+
+esas a son distintas porque la visibilidad esta en sitios diferentes. la direccion de memoria cambia para cada una de ellas.
+
+los char y los enteros son lo mismo.
+
+No usar float, usar double.
+
+## Operadores aritmeticos:
+
+int a = 10, b = 20, c = 0; 
+a = b; // assigns b value to a value
+a = b + 60; // adds 60 to b value, then assigns that value to a
+a += 60; // same as previous
+a = 2*b; // multiplication. Here same as a *= b;
+a = b/3; // division, notice truncation for integers. a /= 3;
+a = b%7; // modulo operator, residue
+a = 10;
+b = 20; 
+a = b++; // post increment
+a = 10;
+b = 20; 
+a = ++b; // pre increment
