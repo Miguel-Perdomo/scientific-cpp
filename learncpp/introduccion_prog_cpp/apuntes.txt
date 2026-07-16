@@ -114,3 +114,8 @@ nombre,
 visibilidad. {}
 
 objeto es distinto a variable, un objeto es un espacio en la memoria puede ser variable (con nombre) o no (sin nombre).
+
+qué significa &??
+
+a & b // operdaor binario, tiene dos operandos, AND logico a nivel de Bits
+
