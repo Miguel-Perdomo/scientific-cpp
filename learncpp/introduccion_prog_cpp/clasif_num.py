@@ -15,5 +15,9 @@ plt.xticks(fontsize = 18)
 plt.yticks(fontsize = 18)
 plt.grid(True, alpha = 0.5)
 plt.savefig("numeros_perfectos.pdf")
+ 
 
+
+
+ 
                          
